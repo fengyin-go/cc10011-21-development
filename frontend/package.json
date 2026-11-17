@@ -6,7 +6,8 @@
   "repoKind": "frontend-only",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build",
+    "build": "npm run verify:schema && tsc --noEmit && vite build",
+    "verify:schema": "node scripts/verify-validation-schema.mjs",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit"
   },

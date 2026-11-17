@@ -3,6 +3,8 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { downloadEntries, listEntries, moduleMeta, runAction as applyAction } from '@/api/local-service'
 import type { EntryRow } from '@/data/types'
 
+import ValidationExecution from './ValidationExecution'
+
 const meta = moduleMeta('validator')
 const columns = [
   "规则编号",
@@ -155,6 +157,8 @@ export default function ValidatorView() {
         <span>共 {total} 条结果校验记录</span>
         {errorMessage && <span className="error-text">{errorMessage}</span>}
       </footer>
+
+      <ValidationExecution />
     </section>
   )
 }
